@@ -1,0 +1,7 @@
+#Tue Nov 12 20:40:35 CET 2019
+base.0=C\:\\Users\\kasper\\Desktop\\BotekAssignment (2)\\BotekAssignment\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=C\:\\Users\\kasper\\Desktop\\BotekAssignment (2)\\BotekAssignment\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

@@ -1,0 +1,104 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.botekassignment"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+8-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:7:5-78
+12-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+13-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:8:5-84
+13-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:8:22-82
+14
+15    <supports-screens
+15-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:11:5-14:40
+16        android:anyDensity="true"
+16-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:12:9-34
+17        android:largeScreens="true"
+17-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:13:9-36
+18        android:normalScreens="true" />
+18-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:14:9-37
+19
+20    <uses-feature
+20-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:16:5-18:36
+21        android:name="android.hardware.location.network"
+21-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:17:9-57
+22        android:required="false" />
+22-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:18:9-33
+23    <uses-feature
+23-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:19:5-21:36
+24        android:name="android.hardware.location.gps"
+24-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:20:9-53
+25        android:required="false" />
+25-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:21:9-33
+26    <uses-feature
+26-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:22:5-24:36
+27        android:name="android.hardware.telephony"
+27-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:23:9-50
+28        android:required="false" />
+28-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:24:9-33
+29    <uses-feature
+29-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:25:5-27:36
+30        android:name="android.hardware.wifi"
+30-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:26:9-45
+31        android:required="false" />
+31-->[org.osmdroid:osmdroid-android:6.1.2] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\9217604c705859eb85d5a45f06e5ab23\osmdroid-android-6.1.2\AndroidManifest.xml:27:9-33
+32
+33    <application
+33-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:11:5-25:19
+34        android:allowBackup="true"
+34-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:12:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.1.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
+36        android:icon="@mipmap/ic_launcher"
+36-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:13:9-43
+37        android:label="@string/app_name"
+37-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:14:9-41
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:15:9-54
+39        android:supportsRtl="true"
+39-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:16:9-35
+40        android:theme="@style/AppTheme" >
+40-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:17:9-40
+41        <activity android:name="com.example.botekassignment.MainActivity" >
+41-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:18:9-24:20
+41-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:18:19-47
+42            <intent-filter>
+42-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:19:13-23:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:20:17-69
+43-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:20:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:22:17-77
+45-->C:\Users\kasper\Desktop\BotekAssignment (2)\BotekAssignment\app\src\main\AndroidManifest.xml:22:27-74
+46            </intent-filter>
+47        </activity>
+48        <activity
+48-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\bd8a4935a17dde33dc1d62d4f9914d3b\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+49            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+49-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\bd8a4935a17dde33dc1d62d4f9914d3b\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+50            android:exported="false"
+50-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\bd8a4935a17dde33dc1d62d4f9914d3b\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+51            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+51-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\bd8a4935a17dde33dc1d62d4f9914d3b\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+52
+53        <meta-data
+53-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\80e31e6dc99d76411857a9f1614e492b\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+54            android:name="com.google.android.gms.version"
+54-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\80e31e6dc99d76411857a9f1614e492b\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+55            android:value="@integer/google_play_services_version" />
+55-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\kasper\.gradle\caches\transforms-2\files-2.1\80e31e6dc99d76411857a9f1614e492b\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+56    </application>
+57
+58</manifest>
