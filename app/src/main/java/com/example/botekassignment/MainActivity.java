@@ -8,6 +8,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
@@ -24,6 +25,8 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.osmdroid.api.IGeoPoint;
@@ -46,6 +49,8 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -84,18 +89,78 @@ public class MainActivity extends AppCompatActivity {
         _mapView.getController().setCenter(new GeoPoint(57.791222, 13.418087));
         _mapView.getController().setZoom(5d);
 
-
-
-
-
-
         IConfigurationProvider osmConfig = Configuration.getInstance();
         osmConfig.setOsmdroidBasePath(new File(this.getFilesDir().getAbsoluteFile(), "osmdroid"));
         osmConfig.setOsmdroidTileCache(new File(this.getFilesDir().getAbsoluteFile(), "tile"));
 
-
-
         _textView = findViewById(R.id.distTraveled);
+
+        if(checkPermissions()){
+            startLocationUpdates();
+        }
+
+    }
+    private LocationCallback locationCallback = new LocationCallback(){
+        @Override
+        public void onLocationResult(LocationResult locationResult) {
+            super.onLocationResult(locationResult);
+            Location location = locationResult.getLastLocation();
+            if(location != null) {
+
+                _newPos = new GeoPoint(location.getLatitude(),location.getLongitude());
+
+                if(_userPos == null){
+                    _userPos = _newPos;
+                }
+
+                double dist = (_userPos.distanceToAsDouble(_newPos));
+
+
+                _totalDistanceTraveled = _totalDistanceTraveled + dist;
+                _orientation = angleBetweenPoints(_userPos,_newPos);
+                Log.d("ori", Double.toString(_orientation));
+                _mapView.setMapOrientation(_orientation);
+
+
+
+                DecimalFormat df = new DecimalFormat("#.##");
+                _textView.setText(String.format(df.format(_totalDistanceTraveled)));
+
+                if(dist < 5 ){
+                    clearMarkers();
+                    setMapCenter(_newPos);
+                    addMarker(_newPos,_orientation);
+
+                }else{
+                    //drawPolyline(_userPos,_newPos,dist);
+                    addPolyline(_userPos,_newPos,colorDistance(dist));
+                    clearMarkers();
+                    setMapCenter(_newPos);
+                    addMarker(_newPos,_orientation);
+                    _userPos = _newPos;
+                }
+
+
+            }
+        }
+    };
+
+    private boolean checkPermissions() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        } else {
+            requestPermissions();
+            return false;
+        }
+    }
+
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION} ,1);
+    }
+
+    protected void startLocationUpdates() {
 
         _locationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -124,52 +189,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-    private LocationCallback locationCallback = new LocationCallback(){
-        @Override
-        public void onLocationResult(LocationResult locationResult) {
-            super.onLocationResult(locationResult);
-            Location location = locationResult.getLastLocation();
-            if(location != null) {
 
-                _newPos = new GeoPoint(location.getLatitude(),location.getLongitude());
-
-                if(_userPos == null){
-                    _userPos = _newPos;
-                }
-
-                double dist = (_userPos.distanceToAsDouble(_newPos));
-
-
-                _totalDistanceTraveled = _totalDistanceTraveled + dist;
-                _orientation = angleBetweenPoints(_userPos,_newPos);
-                Log.d("ori", Double.toString(_orientation));
-                _mapView.setMapOrientation(_orientation);
-
-
-
-                DecimalFormat df = new DecimalFormat("#.##");
-                _textView.setText(String.format(df.format(_totalDistanceTraveled)));
-
-
-
-                if(dist < 5 ){
-                    clearMarkers();
-                    setMapCenter(_newPos);
-                    addMarker(_newPos,_orientation);
-
-                }else{
-                    //drawPolyline(_userPos,_newPos,dist);
-                    addPolyline(_userPos,_newPos,colorDistance(dist));
-                    clearMarkers();
-                    setMapCenter(_newPos);
-                    addMarker(_newPos,_orientation);
-                    _userPos = _newPos;
-                }
-
-
-            }
-        }
-    };
     @Override
     protected void onRestart(){
         super.onRestart();
@@ -220,19 +240,6 @@ public class MainActivity extends AppCompatActivity {
         _mapView.getOverlayManager().add(line);
         _mapView.invalidate();
 
-
-
-        /*List<GeoPoint> geoPointsTest = new ArrayList<>();
-
-        geoPointsTest.add(testPos1);
-        geoPointsTest.add(testPos2);
-
-        Polyline line2 = new Polyline();
-        line.setPoints(geoPointsTest);
-
-        _mapView.getOverlayManager().add(line2);
-
-        _mapView.invalidate();*/
 
     }
 
